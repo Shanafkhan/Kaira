@@ -6,7 +6,7 @@ import Coffee from './components/Coffee';
 import Store from './components/Store';
 import GetInTouch from './components/GetInTouch';
 import Footer from './components/Footer';
-import Logo from './components/logo';
+import Logo from './components/Logo';
 import TraditionSection from './components/TraditionSection';
 
 function App() {
