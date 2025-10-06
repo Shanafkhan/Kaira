@@ -93,7 +93,7 @@ export default function Coffee() {
   return (
     <>
       <div
-        className='hidden section relative min-h-screen w-full sm:flex items-center justify-center p-30'
+        className='hidden section relative min-h-screen w-full md:flex items-center justify-center p-30'
         style={{
           backgroundImage: `url(${woodBackground})`,
           backgroundSize: "cover",
