@@ -5,19 +5,29 @@ import greveliaRobusta from "../assets/images/grevellia-robusta.png";
 import woodBackground from "../assets/images/coffee-background.png";
 import arrowleft from "../assets/images/arrow-left.png";
 import arrowright from "../assets/images/arrow-right.png";
-import arabica from '../assets/images/arabica.png';
-import grevelia from '../assets/images/grevelia.png';
 import nyctanthes from '../assets/images/nyctanthes.png';
-import cumini from '../assets/images/cumini.png'
+import cumini from '../assets/images/cumini.png';
+import marabica from '../assets/images/marabica.png';
+import mgrevelia from '../assets/images/mgrevelia.png';
+import mcumini from '../assets/images/mcumini.png';
+import mnyctanthes from '../assets/images/mnyctanthes.png';
 
 
 const slides = [
   {
-    src: arabica,
+    src: marabica,
     text: "content on coffea robusta"
   },
   {
-    src:grevelia ,
+    src:mgrevelia ,
+    text: "Content on grevelia robusta"
+  },
+  {
+    src: mcumini,
+    text: "content on coffea robusta"
+  },
+  {
+    src:mnyctanthes ,
     text: "Content on grevelia robusta"
   }
 ];
@@ -237,20 +247,20 @@ export default function Coffee() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlides}
-            className='absolute left-4 top-1/2 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute left-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowleft}
               alt='Previous Slide'
-              className='h-6 w-auto lg:h-28 lg:w-auto'
+              className='h-15 w-auto lg:h-28 lg:w-auto'
             />
           </button>
           <button
             onClick={nextSlides}
-            className='absolute right-4 top-1/2 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute right-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowright}
               alt='Next Slide'
-              className='h-6 w-auto lg:h-28 lg:w-auto'
+              className='h-15 w-auto lg:h-28 lg:w-auto'
             />
           </button>
         </div>

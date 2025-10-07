@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import logoVideo from "../assets/vedio/kaira_logo_ved.webm";
 import background from "../assets/images/Hero-background.png";
+import ImageSlider from "./ImageSlider";
 
 import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
@@ -98,8 +99,9 @@ export default function Hero() {
   `;
 
   return (
-    <div
-      className="relative flex flex-col items-center justify-center text-center min-h-[600px] md:min-h-screen overflow-hidden px-4 sm:px-10 md:px-20"
+    <>
+      <div
+      className="relative hidden md:flex flex-col items-center justify-center text-center min-h-[600px] md:min-h-screen overflow-hidden px-4 sm:px-10 md:px-20"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -158,5 +160,42 @@ export default function Hero() {
         </h1>
       </div>
     </div>
+    <div style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }} className="md:hidden p-5 flex flex-col items-center">
+        <div className={`z-10 max-w-5xl ${textTransitionClass}`}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-[150px] sm:h-[200px] md:h-[300px] w-auto object-contain mx-auto"
+        >
+          <source src={logoVideo} type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+        <div>
+          <h2 className="font-primary text-base text-center sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10">
+          {currentContent.h2}
+        </h2>
+
+        <h1 className="mt-4 sm:mt-6 text-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-brown font-primary font-medium tracking-tighter">
+          {currentContent.h1}
+        </h1>
+        </div>
+        
+        <div className="max-w-[400px] overflow-clip pt-10">
+          <ImageSlider/>
+        </div>
+        
+      </div> 
+
+
+    </div>
+
+    </>
+    
   );
 }

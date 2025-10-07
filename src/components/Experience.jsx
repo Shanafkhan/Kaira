@@ -18,16 +18,16 @@ export default function Experience() {
       </div>
 
       {/* Content Section */}
-      <div className='flex flex-col md:flex-row items-center pt-8 sm:pt-12 gap-10 md:gap-0'>
+      <div className='flex flex-col md:flex-row items-center pt-1 sm:pt-12 gap-6 md:gap-0'>
         {/* Image */}
         <div className='w-full md:w-1/2 flex flex-col items-center justify-center'>
           <img
             src={image}
             alt='Experience'
-            className='w-[280px] h-[280px] lg:w-auto lg:h-[600px] object-contain'
+            className='w-[350px] h-auto lg:w-auto lg:h-[600px] object-contain'
           />
           {/* Button */}
-          <div className='flex justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
+          <div className='hidden md:flex justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
             <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300'>
               Download Our Brochure Now!
             </button>
@@ -64,6 +64,11 @@ export default function Experience() {
             </div>
           ))}
         </div>
+        <div className='flex md:hidden justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
+            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300'>
+              Download Our Brochure Now!
+            </button>
+          </div>
       </div>
     </div>
   );
