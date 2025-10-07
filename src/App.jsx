@@ -7,10 +7,9 @@ import Store from './components/Store';
 import GetInTouch from './components/GetInTouch';
 import Footer from './components/Footer';
 import Logo from './components/Logo';
-import TraditionSection from './components/TraditionSection';
+import Envelope from './components/Envelope';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -19,7 +18,7 @@ function App() {
       <Experience/>
       <Coffee />
       <Store />
-      <TraditionSection />
+      <Envelope />
       <GetInTouch />
       <Footer />
     </>

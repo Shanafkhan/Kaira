@@ -7,6 +7,8 @@ import arrowleft from "../assets/images/arrow-left.png";
 import arrowright from "../assets/images/arrow-right.png";
 import arabica from '../assets/images/arabica.png';
 import grevelia from '../assets/images/grevelia.png';
+import nyctanthes from '../assets/images/nyctanthes.png';
+import cumini from '../assets/images/cumini.png'
 
 
 const slides = [
@@ -57,6 +59,44 @@ const SLIDES_DATA = [
     },
     bottomRight: {
       text: "Timber from mature Silver Oak trees is used in furniture, construction, and plywood, adding economic value to estate properties.",
+    },
+  },
+  {
+    id: 2,
+    mainImage: nyctanthes,
+    topLeft: {
+      title: "Nyctanthes arbor-tristis",
+      phonetic: "nik-TAN-theez AR-bor TREES-tis",
+      commonName: " Parijatha, Night Jasmine, Coral Jasmine",
+      family: "Proteaceae",
+    },
+    topRight: {
+      text: "The Parijatha tree holds a sacred place in Indian folklore and temple gardens. Native to South Asia, it thrives in the cool, mist-kissed slopes of Malnad. Known for its heavenly scent that fills the air at dawn, Parijatha is a symbol of purity, devotion, and unspoken nostalgia.",
+    },
+    bottomLeft: {
+      text: "Parijatha graces the courtyards and pathways of Kaira, its fragrance mingling with coffee and pepper vines. More than an ornamental plant, it is a reminder of slow mornings, prayers under soft light, and the timeless charm of Malnad living.",
+    },
+    bottomRight: {
+      text: "A small, graceful tree with soft grey bark and delicate white-orange blooms that unfurl only at night, carpeting the ground with tiny stars by sunrise. Its beauty lies not in grandeur, but in simplicity and rhythm with nature’s cycle.",
+    },
+  },
+  {
+    id: 3,
+    mainImage: cumini,
+    topLeft: {
+      title: "Syzygium cumini",
+      phonetic: "Siz-IH-jee-um KYOO-mi-nee",
+      commonName: "Jamun, Indian Blackberry, Neredu, Naval",
+      family: "Proteaceae",
+    },
+    topRight: {
+      text: "Jamun is one of India’s most ancient and resilient trees, native to tropical regions and deeply rooted in Ayurveda and rural life. In the cool, rain-soaked terrain of Malnad, Jamun thrives with ease, standing tall as a symbol of endurance, nourishment, and grounded simplicity.",
+    },
+    bottomLeft: {
+      text: "Jamun trees dot the landscape of Kaira, blending beauty with purpose. Their canopy offers quiet shade along walkways, while seasonal fruits attract birds and add a burst of color to the Malnad green. To every resident, Jamun symbolizes wholesome living, nature’s sweetness wrapped in simplicity, just like life at Kaira.",
+    },
+    bottomRight: {
+      text: "A large, evergreen tree with dense, glossy foliage and smooth grey bark. During summer, it bears clusters of small white blossoms that mature into deep purple-black berries — rich in flavor and known for their cooling, medicinal qualities.",
     },
   },
 ];
