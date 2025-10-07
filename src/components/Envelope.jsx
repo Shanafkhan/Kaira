@@ -8,8 +8,24 @@ import image2 from "../assets/images/envelope2.png";
 import image3 from "../assets/images/envelope3.png";
 import image4 from "../assets/images/envelope4.png";
 import textBackground from "../assets/images/textBackground.png";
-import arrowleft from '../assets/images/arrow-left.png';
-import arrowright from '../assets/images/arrow-right.png';
+import arrowleft from "../assets/images/arrow-left.png";
+import arrowright from "../assets/images/arrow-right.png";
+import food from "../assets/images/mfood.png";
+import home from "../assets/images/mhome.png";
+import traditions from "../assets/images/mtraditions.png";
+import wellness from "../assets/images/mwellness.png";
+
+const prevSlides = () => {
+  const isFirstSlide = currentIndex === 0;
+  const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+  setCurrentIndex(newIndex);
+};
+
+const nextSlides = () => {
+  const isLastSlide = currentIndex === slides.length - 1;
+  const newIndex = isLastSlide ? 0 : currentIndex + 1;
+  setCurrentIndex(newIndex);
+};
 
 export default function EnvelopeSlider() {
   // All slides (images + text)
@@ -24,28 +40,59 @@ export default function EnvelopeSlider() {
     {
       background: backGround2,
       envelope: image2,
-      title: "Where Taste Meets Tradition",
+      title: "Homes with soul",
       description:
-        "Authentic recipes crafted with love, bringing you the warmth of Malnad kitchens.",
+        "Wooden beams, laterite walls, Mangalore tiles. Nostalgia, but make it comfy.",
     },
     {
       background: backGround3,
       envelope: image3,
-      title: "A Culinary Retreat",
+      title: "Wellness, Malnad style",
       description:
-        "Escape the ordinary and indulge in timeless flavors that comfort and inspire.",
+        "A Pushkarini-inspired pool,an Ayurvedic spa, and meditation corners.",
     },
     {
       background: backGround4,
       envelope: image4,
-      title: "Whispers of the Hills",
+      title: "Keeping Traditions Alive",
       description:
-        "Every bite tells a story of misty mornings, earthy aromas, and hearty laughter.",
+        "Oil baths, woodfire cooking, copper vessels, courtyard dinners.Yes, food tastes better here.",
+    },
+  ];
+
+  const mslides = [
+    {
+      src: food,
+      text: "content on coffea robusta",
+    },
+    {
+      src: home,
+      text: "Content on grevelia robusta",
+    },
+    {
+      src: traditions,
+      text: "content on coffea robusta",
+    },
+    {
+      src: wellness,
+      text: "Content on grevelia robusta",
     },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const prevSlides = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlides = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   useEffect(() => {
     setHasAnimated(false);
@@ -104,53 +151,103 @@ export default function EnvelopeSlider() {
   };
 
   return (
-    <div
-      key={currentSlide} //
-      className='min-h-screen relative overflow-hidden flex items-center justify-center'
-      style={{
-        backgroundImage: `url(${current.background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}>
-      {/* Envelope Image */}
-      <img src={current.envelope} alt='Envelope' className={envelopeClasses} />
-
-      {/* Text Card */}
+    <>
       <div
-        className={textClasses}
+        key={currentSlide} //
+        className='min-h-screen relative overflow-hidden hidden md:flex items-center justify-center'
         style={{
-          backgroundImage: `url(${textBackground})`,
+          backgroundImage: `url(${current.background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}>
-        <div className='p-8 text-center max-w-80'>
-          <h1 className='text-3xl font-secondary font-bold text-gray-800 mb-4'>
-            {current.title}
-          </h1>
-          <p className='text-lg text-stone-950 pt-6 font-primary'>{current.description}</p>
+        {/* Envelope Image */}
+        <img
+          src={current.envelope}
+          alt='Envelope'
+          className={envelopeClasses}
+        />
+
+        {/* Text Card */}
+        <div
+          className={textClasses}
+          style={{
+            backgroundImage: `url(${textBackground})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}>
+          <div className='p-8 text-center max-w-80'>
+            <h1 className='text-3xl font-secondary font-bold text-gray-800 mb-4'>
+              {current.title}
+            </h1>
+            <p className='text-lg text-stone-950 pt-6 font-primary'>
+              {current.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className='absolute left-5 top-1/2 -translate-y-1/2  transition-all'>
+          <img
+            src={arrowleft}
+            alt='Previous Slide'
+            className='h-6 w-auto lg:h-28 lg:w-auto'
+          />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className='absolute right-5 top-1/2 -translate-y-1/2  transition-all'>
+          <img
+            src={arrowright}
+            alt='Next Slide'
+            className='h-6 w-auto lg:h-28 lg:w-auto'
+          />
+        </button>
+      </div>
+      {/* Mobile Version */}
+
+      <div className='flex md:hidden items-center justify-center w-full'>
+        <div className='relative w-full'>
+          {/* Slides Container */}
+          <div className='w-full h-full overflow-hidden'>
+            <div
+              className='flex h-full transition-transform ease-out duration-500'
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+              {/* Map through slides to render each GIF */}
+              {mslides.map((slide, index) => (
+                <img
+                  key={index}
+                  src={slide.src}
+                  alt={slide.text}
+                  className='w-full h-full object-cover flex-shrink-0 '
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlides}
+            className='absolute left-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            <img
+              src={arrowleft}
+              alt='Previous Slide'
+              className='h-15 w-auto lg:h-28 lg:w-auto'
+            />
+          </button>
+          <button
+            onClick={nextSlides}
+            className='absolute right-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            <img
+              src={arrowright}
+              alt='Next Slide'
+              className='h-15 w-auto lg:h-28 lg:w-auto'
+            />
+          </button>
         </div>
       </div>
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className='absolute left-5 top-1/2 -translate-y-1/2  transition-all'>
-        <img
-          src={arrowleft}
-          alt='Previous Slide'
-          className='h-6 w-auto lg:h-28 lg:w-auto'
-        />
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className='absolute right-5 top-1/2 -translate-y-1/2  transition-all'>
-        <img
-          src={arrowright}
-          alt='Next Slide'
-          className='h-6 w-auto lg:h-28 lg:w-auto'
-        />
-      </button>
-    </div>
+    </>
   );
 }
