@@ -1,36 +1,41 @@
-import image from "../assets/images/Experience.png";
+import image from "../assets/images/kairaExperience.png";
 import bgimg from "../assets/images/experience-background.png";
 
 export default function Experience() {
   return (
     <div
-      className="font-primary text-[#F3E7D3] py-12 sm:py-16 md:py-20"
+      className='font-primary text-brown-light py-12 sm:py-16 md:py-20'
       style={{
         backgroundImage: `url(${bgimg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
-    >
+      }}>
       {/* Section Title */}
-      <div className="px-4 sm:px-8 md:px-16">
-        <h1 className="text-4xl sm:text-6xl md:text-8xl tracking-tighter pb-8 sm:pb-12 border-b-2 border-[#F3E7D3] text-center md:text-left">
+      <div className='px-4 sm:px-8 md:px-16'>
+        <h1 className='text-4xl sm:text-6xl md:text-8xl tracking-tighter pb-8 sm:pb-12 border-b-2 border-brown-light text-center md:text-left'>
           The Kaira Experience
         </h1>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col md:flex-row items-center pt-8 sm:pt-12 gap-10 md:gap-0">
+      <div className='flex flex-col md:flex-row items-center pt-8 sm:pt-12 gap-10 md:gap-0'>
         {/* Image */}
-        <div className="w-full md:w-1/2 flex items-center justify-center">
+        <div className='w-full md:w-1/2 flex flex-col items-center justify-center'>
           <img
             src={image}
-            alt="Experience"
-            className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[550px] md:h-[550px] lg:w-[600px] lg:h-[600px] object-contain"
+            alt='Experience'
+            className='w-[280px] h-[280px] lg:w-auto lg:h-[600px] object-contain'
           />
+          {/* Button */}
+          <div className='flex justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
+            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300'>
+              Download Our Brochure Now!
+            </button>
+          </div>
         </div>
 
         {/* Text Content */}
-        <div className="w-full md:w-1/2 px-6 sm:px-8 md:px-10 lg:px-16">
+        <div className='w-full md:w-1/2 px-6 sm:px-8 md:px-10 lg:px-16'>
           {[
             {
               title: "Tradition meets comfort",
@@ -49,23 +54,16 @@ export default function Experience() {
               subtitle: "Management, rentals, plantations, upkeep.",
             },
           ].map((item, index) => (
-            <div key={index} className="mb-6 sm:mb-8 md:mb-10">
-              <h2 className="font-secondary text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <div key={index} className='mb-6 sm:mb-3 md:mb-4'>
+              <h2 className='font-secondary text-2xl sm:text-4xl md:text-5xl tracking-tighter font-bold leading-tight'>
                 {item.title}
               </h2>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-light tracking-tighter pt-2 sm:pt-4">
+              <h3 className='text-xl sm:text-2xl md:text-3xl font-light tracking-tighter pt-2 sm:pt-2'>
                 {item.subtitle}
               </h3>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Button */}
-      <div className="flex justify-center mt-10 sm:mt-12 md:mt-16 px-4">
-        <button className="text-lg sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-[#F3E7D3] font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300">
-          Download Our Brochure Now!
-        </button>
       </div>
     </div>
   );
