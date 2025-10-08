@@ -230,20 +230,20 @@ export default function EnvelopeSlider() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlides}
-            className='absolute left-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute left-2 bottom-[30%] transform -translate-y-1/2  rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowleft}
               alt='Previous Slide'
-              className='h-15 w-auto lg:h-28 lg:w-auto'
+              className='h-10 w-auto lg:h-28 lg:w-auto'
             />
           </button>
           <button
             onClick={nextSlides}
-            className='absolute right-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute right-2 bottom-[30%] transform -translate-y-1/2  rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowright}
               alt='Next Slide'
-              className='h-15 w-auto lg:h-28 lg:w-auto'
+              className='h-10 w-auto lg:h-28 lg:w-auto'
             />
           </button>
         </div>
