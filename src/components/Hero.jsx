@@ -17,7 +17,7 @@ const AnimatedImage = ({ src, alt, initialClass, finalClass, isAnimated }) => {
     absolute transition-all duration-[1500ms] ease-out
     ${finalClass}
     ${isAnimated ? "opacity-100" : `${initialClass} opacity-0`}
-    w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[450px]
+    w-[200px] h-[200px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[450px]
     object-contain overflow-hidden
   `;
 
@@ -88,8 +88,8 @@ export default function Hero() {
   // Final/Visible positions
   const final_TL = "top-[-250px] left-[200px] rotate-[135deg]";
   const final_TR = "top-[-200px] right-[150px] rotate-[-135deg]";
-  const final_BL = "bottom-[-200px] left-[50px] rotate-[45deg]";
-  const final_BR = "bottom-[-200px] right-[50px] rotate-[-45deg]";
+  const final_BL = "bottom-[-200px] left-[40px] rotate-[35deg]";
+  const final_BR = "bottom-[-200px] right-[40px] rotate-[-35deg]";
 
   const currentContent = HERO_CONTENT[phase % HERO_CONTENT.length];
 
