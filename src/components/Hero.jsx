@@ -101,7 +101,7 @@ export default function Hero() {
   return (
     <>
       <div
-      className="relative hidden md:flex flex-col items-center justify-center text-center min-h-[600px] md:min-h-screen overflow-hidden px-4 sm:px-10 md:px-20"
+      className="relative hidden md:flex flex-col items-center justify-center text-center min-h-[600px] md:min-h-[120vh] overflow-hidden px-4 sm:px-10 md:px-20"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
