@@ -17,7 +17,7 @@ const AnimatedImage = ({ src, alt, initialClass, finalClass, isAnimated }) => {
     absolute transition-all duration-[1500ms] ease-out
     ${finalClass}
     ${isAnimated ? "opacity-100" : `${initialClass} opacity-0`}
-    w-[200px] h-[200px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[450px]
+    w-[200px] h-[200px] sm:w-[300px] sm:h-[250px] md:w-[350px] md:h-[450px]
     object-contain overflow-hidden
   `;
 
@@ -101,7 +101,7 @@ export default function Hero() {
   return (
     <>
       <div
-      className="relative hidden md:flex flex-col items-center justify-center text-center min-h-[600px] md:min-h-[120vh] overflow-hidden px-4 sm:px-10 md:px-20"
+      className="relative hidden md:flex flex-col items-center text-center min-h-[600px] md:min-h-[120vh] overflow-hidden px-4 md:pt-25 sm:px-10 md:px-20"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
