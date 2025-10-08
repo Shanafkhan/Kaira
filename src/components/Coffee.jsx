@@ -251,7 +251,7 @@ export default function Coffee() {
             <img
               src={arrowleft}
               alt='Previous Slide'
-              className='h-15 w-auto lg:h-28 lg:w-auto'
+              className='h-10 w-auto lg:h-28 lg:w-auto'
             />
           </button>
           <button
@@ -260,7 +260,7 @@ export default function Coffee() {
             <img
               src={arrowright}
               alt='Next Slide'
-              className='h-15 w-auto lg:h-28 lg:w-auto'
+              className='h-10 w-auto lg:h-28 lg:w-auto'
             />
           </button>
         </div>
