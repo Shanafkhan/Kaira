@@ -175,7 +175,7 @@ export default function Coffee() {
           </p>
         </div>
 
-        <div className='absolute top-20 right-20 z-20 w-fit max-w-[500px] text-right'>
+        <div className='absolute top-20 right-20 z-20 w-fit max-w-lg text-right'>
           <p
             className='text-xl leading-relaxed font-hand-written'
             dangerouslySetInnerHTML={{
@@ -187,7 +187,7 @@ export default function Coffee() {
           />
         </div>
 
-        <div className='absolute bottom-20 left-20 z-20 w-fit max-w-[500px] text-left'>
+        <div className='absolute bottom-20 left-20 z-20 w-fit max-w-lg text-left'>
           <p
             className='text-xl leading-relaxed font-hand-written'
             dangerouslySetInnerHTML={{
@@ -247,7 +247,7 @@ export default function Coffee() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlides}
-            className='absolute left-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute left-[3px] top-1/3 transform -translate-y-1/2 p-1 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowleft}
               alt='Previous Slide'
@@ -256,7 +256,7 @@ export default function Coffee() {
           </button>
           <button
             onClick={nextSlides}
-            className='absolute right-4 bottom-5 transform -translate-y-1/2 p-4 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
+            className='absolute right-[3px] top-1/3 transform -translate-y-1/2 p-1 rounded-full bg-transparent z-30 opacity-70 hover:opacity-100 cursor-pointer'>
             <img
               src={arrowright}
               alt='Next Slide'
