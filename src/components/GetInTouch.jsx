@@ -1,4 +1,11 @@
+import { useState } from "react";
+import Form from "./Form";
 export default function GetInTouch() {
+   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  function handleForm(){
+    setIsFormOpen(true);
+  }
   return (
     <div className="text-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 py-16 sm:py-20 md:py-25 flex flex-col items-center bg-[#F5EDD9]">
       
@@ -30,10 +37,13 @@ export default function GetInTouch() {
 
       {/* Button */}
       <div className="pt-8 md:pt-10">
-        <button className="font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-6 sm:px-8 py-3 sm:py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300">
+        <button className="font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-6 sm:px-8 py-3 sm:py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer" onClick={handleForm}>
           Get In Touch With Us
         </button>
       </div>
+      {
+        isFormOpen && <Form isFormOpen={isFormOpen} isFormClose={()=>setIsFormOpen(false)}/>
+      }
     </div>
   );
 }

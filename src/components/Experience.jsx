@@ -1,7 +1,14 @@
+import { useState } from "react";
 import image from "../assets/images/kairaExperience.png";
 import bgimg from "../assets/images/experience-background.png";
+import Form from "./Form";
 
 export default function Experience() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  function handleForm(){
+    setIsFormOpen(true);
+  }
   return (
     <div
       className='font-primary text-brown-light py-12 sm:py-16 md:py-20'
@@ -28,7 +35,7 @@ export default function Experience() {
           />
           {/* Button */}
           <div className='hidden md:flex justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
-            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300'>
+            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300' onClick={handleForm}>
               Download Our Brochure Now!
             </button>
           </div>
@@ -65,11 +72,15 @@ export default function Experience() {
           ))}
         </div>
         <div className='flex md:hidden justify-center mt-0 sm:mt-12 lg:mt-5 px-4'>
-            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300'>
+            <button className='text-md sm:text-2xl md:text-3xl rounded-[50px] sm:rounded-[70px] px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 border-2 border-brown-light font-secondary font-bold cursor-pointer hover:bg-[#F3E7D3] hover:text-[#2C2C2C] transition-all duration-300' onClick={handleForm}>
               Download Our Brochure Now!
             </button>
           </div>
       </div>
+
+      {
+        isFormOpen && <Form isFormOpen={isFormOpen} isFormClose={()=>setIsFormOpen(false)}/>
+      }
     </div>
   );
 }

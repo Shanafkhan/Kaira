@@ -1,6 +1,13 @@
 import logo from "../assets/images/kaira-logo-light.png";
+import { useState } from "react";
+import Form from "./Form";
 
 export default function Footer() {
+   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  function handleForm(){
+    setIsFormOpen(true);
+  }
   return (
     <div className='flex flex-col lg:flex-row bg-[#104D39] text-light font-primary'>
       {/* Left Section */}
@@ -9,7 +16,7 @@ export default function Footer() {
           From coffee plantations to ROI numbers, our brochure’s got everything.
           Don’t worry, it’s more cozy than corporate.
         </h1>
-        <button className='font-secondary text-lg sm:text-xl lg:text-2xl font-normal text-light border-1 border-light rounded-[55px] tracking-tighter px-5 sm:px-6 py-3 sm:py-4 mt-3 hover:bg-light hover:text-[#104D39] transition duration-300'>
+        <button className='font-secondary text-lg sm:text-xl lg:text-2xl font-normal text-light border-1 border-light rounded-[55px] tracking-tighter px-5 sm:px-6 py-3 sm:py-4 mt-3 hover:bg-light hover:text-[#104D39] transition duration-300 cursor-pointer' onClick={handleForm}>
           Download Our Brochure Now!
         </button>
       </div>
@@ -84,6 +91,9 @@ export default function Footer() {
           </tbody>
         </table>
       </div>
+      {
+        isFormOpen && <Form isFormOpen={isFormOpen} isFormClose={()=>setIsFormOpen(false)}/>
+      }
     </div>
   );
 }
