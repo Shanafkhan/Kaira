@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import backGround1 from "../assets/images/backGround1.png";
-import backGround2 from "../assets/images/backGround2.png";
-import backGround3 from "../assets/images/backGround3.png";
-import backGround4 from "../assets/images/backGround4.png";
+import backGround1 from "../assets/images/backGround1.webp";
+import backGround2 from "../assets/images/backGround2.webp";
+import backGround3 from "../assets/images/backGround3.webp";
+import backGround4 from "../assets/images/backGround4.webp";
 import image1 from "../assets/images/envelope.png";
 import image2 from "../assets/images/envelope2.png";
 import image3 from "../assets/images/envelope3.png";
 import image4 from "../assets/images/envelope4.png";
 import textBackground from "../assets/images/textBackground.png";
-import arrowleft from "../assets/images/arrow-left.png";
-import arrowright from "../assets/images/arrow-right.png";
+import arrowleft from "../assets/images/arrow-left.webp";
+import arrowright from "../assets/images/arrow-right.webp";
 import food from "../assets/images/mfood.png";
 import home from "../assets/images/mhome.png";
 import traditions from "../assets/images/mtraditions.png";
@@ -188,7 +188,7 @@ export default function EnvelopeSlider() {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className='absolute left-5 top-1/2 -translate-y-1/2  transition-all'>
+          className='absolute left-5 top-1/2 -translate-y-1/2  transition-all cursor-pointer'>
           <img
             src={arrowleft}
             alt='Previous Slide'
@@ -198,7 +198,7 @@ export default function EnvelopeSlider() {
 
         <button
           onClick={nextSlide}
-          className='absolute right-5 top-1/2 -translate-y-1/2  transition-all'>
+          className='absolute right-5 top-1/2 -translate-y-1/2  transition-all cursor-pointer'>
           <img
             src={arrowright}
             alt='Next Slide'

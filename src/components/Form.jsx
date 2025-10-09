@@ -31,13 +31,13 @@ export default function Form({ isFormOpen, isFormClose }) {
     }
 
     try {
-      const webhookURL =
-        "https://flow.zoho.com/899071440/flow/webhook/incoming?zapikey=1001.032298ac244ab16396c1ccb1793332ca.a6728157ec735e0e3955e6c335e8a9a2&isdebug=false";
+      const pageUrl = window.location.href; 
+      const payload = { name, email, phoneNumber,pageUrl }
 
-      const response = await fetch(webhookURL, {
+      const response = await fetch('/api/send-webhook', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phoneNumber }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) throw new Error("Failed to send data");
