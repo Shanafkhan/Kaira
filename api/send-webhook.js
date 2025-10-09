@@ -2,7 +2,9 @@
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
+    return res
+      .status(405)
+      .json({ success: false, message: "Method not allowed" });
   }
 
   const { name, email, phoneNumber, pageUrl } = req.body;
@@ -13,8 +15,13 @@ export default async function handler(req, res) {
 
     const response = await fetch(webhookURL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phoneNumber, pageUrl }),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        name,
+        email,
+        phoneNumber,
+        pageUrl,
+      }).toString(),
     });
 
     if (!response.ok) throw new Error("Webhook failed");
