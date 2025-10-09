@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import coffeearabica from "../assets/images/coffee-arabica.png";
 import greveliaRobusta from "../assets/images/grevellia-robusta.png";
-import woodBackground from "../assets/images/coffee-background.png";
-import arrowleft from "../assets/images/arrow-left.png";
-import arrowright from "../assets/images/arrow-right.png";
+import woodBackground from "../assets/images/coffee-background.webp";
+import arrowleft from "../assets/images/arrow-left.webp";
+import arrowright from "../assets/images/arrow-right.webp";
 import nyctanthes from '../assets/images/nyctanthes.png';
 import cumini from '../assets/images/cumini.png';
 import marabica from '../assets/images/marabica.png';
