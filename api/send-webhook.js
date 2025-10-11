@@ -17,10 +17,20 @@ export default async function handler(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        name,
-        email,
-        phoneNumber,
-        pageUrl,
+        Remote__IP: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+        Time: new Date().toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        Date: new Date().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+        Name: name,
+        Phone: phoneNumber,
+        email : email,
+        Page__URL : pageUrl,
       }).toString(),
     });
 
