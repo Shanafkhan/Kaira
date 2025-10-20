@@ -1,42 +1,26 @@
-// api/send-webhook.js
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res
-      .status(405)
-      .json({ success: false, message: "Method not allowed" });
+    return res.status(405).json({ success: false, message: "Method not allowed" });
   }
 
-  const { name, email, phoneNumber, pageUrl } = req.body;
+  const { phoneNumber } = req.body;
+  if (!phoneNumber) {
+    return res.status(400).json({ success: false, message: "Phone number required" });
+  }
 
   try {
-    const webhookURL =
-      "https://flow.zoho.com/899071440/flow/webhook/incoming?zapikey=1001.032298ac244ab16396c1ccb1793332ca.a6728157ec735e0e3955e6c335e8a9a2&isdebug=false";
+    const apiKey = "68f214b7760bd";
+    const sender = "VIEWIT";
+    const url = `http://www.smsalert.co.in/api/mverify.json?apikey=${apiKey}&sender=${sender}&mobileno=${phoneNumber}&template=Hello%20User,%20Your%20OTP%20is%20[otp%20length=%224%22]`;
 
-    const response = await fetch(webhookURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        Remote__IP: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
-        Time: new Date().toLocaleTimeString("en-IN", {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-        Date: new Date().toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        }),
-        Name: name,
-        Phone: phoneNumber,
-        email : email,
-        Page__URL : pageUrl,
-      }).toString(),
-    });
+    const response = await fetch(url, { method: "POST", redirect: "follow" });
+    const result = await response.json();
 
-    if (!response.ok) throw new Error("Webhook failed");
+    if (result.status !== "success") {
+      throw new Error(result.description?.desc || "Failed to send OTP");
+    }
 
-    res.status(200).json({ success: true });
+    res.status(200).json({ success: true, message: "OTP sent successfully" });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
