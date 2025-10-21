@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // Step 1: Verify OTP
-    const apiKey = "YOUR_SMSALERT_API_KEY";
+    const apiKey = "68f214b7760bd";
     const verifyURL = `http://www.smsalert.co.in/api/mverify.json?apikey=${apiKey}&mobileno=${phoneNumber}&code=${otp}`;
 
     const verifyResponse = await fetch(verifyURL, { method: "POST", redirect: "follow" });
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
     // Step 2: Once verified, send data to Zoho Webhook
     const webhookURL =
-      "https://flow.zoho.com/899071440/flow/webhook/incoming?zapikey=YOUR_ZOHO_KEY&isdebug=false";
+      "https://flow.zoho.com/899071440/flow/webhook/incoming?zapikey=1001.032298ac244ab16396c1ccb1793332ca.a6728157ec735e0e3955e6c335e8a9a2&isdebug=false";
 
     const zohoResponse = await fetch(webhookURL, {
       method: "POST",
