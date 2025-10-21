@@ -10,8 +10,9 @@ export default async function handler(req, res) {
 
   try {
     const apiKey = "68f214b7760bd";
-    const sender = "VIEWIT";
-    const url = `http://www.smsalert.co.in/api/mverify.json?apikey=68f214b7760bd&mobileno=${phoneNumber}&template=Hello%20User,%20Your%20OTP%20is%20[otp%20length=%224%22]`;
+    const sender = "VBZEST";
+    const template = `Hello Ravi, Your OTP is [otp length="5"]`;
+    const url = `http://www.smsalert.co.in/api/mverify.json?apikey=68f214b7760bd&sender=VBZEST&mobileno=${phoneNumber}&template=${encodeURIComponent(template)}`;
   
     const response = await fetch(url, { method: "POST", redirect: "follow" });
     
