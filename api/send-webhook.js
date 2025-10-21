@@ -9,9 +9,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    const apiKey = "68f214b7760bd";
-    const sender = "VBZEST";
-    const template = `Hello Ravi, Your OTP is [otp length="5"]`;
     const url = `http://www.smsalert.co.in/api/mverify.json?apikey=68f214b7760bd&sender=VBZEST&mobileno=${phoneNumber}&template=Your%20verification%20code%20for%20mobile%20verification%20is%20[otp%20length=%226%22]%20Powered%20by%20Vibez%20Estates`;
     console.log(url);
     const response = await fetch(url, { method: "POST", redirect: "follow" });
@@ -27,4 +24,4 @@ export default async function handler(req, res) {
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
-}
+} 
