@@ -17,7 +17,7 @@ export default function Form({ isFormOpen, isFormClose }) {
       const res = await fetch("/api/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, otp }),
+        body: JSON.stringify({otp }),
       });
 
       const data = await res.json();
@@ -72,6 +72,9 @@ export default function Form({ isFormOpen, isFormClose }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      const data = await response.json();
+      console.log(data);
 
       if (data.success) {
         setStep(2);
