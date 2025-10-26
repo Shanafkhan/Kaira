@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { MapPin } from "lucide-react";
 import logoVideo from "../assets/vedio/kaira_logo_ved.webm";
-import background from "../assets/images/Hero-background.png";
+import background from "../assets/images/Hero-background.webp";
 import ImageSlider from "./ImageSlider";
 import DC from "../assets/images/DcConvertedSite.webp";
 
-import image1 from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
-import image4 from "../assets/images/image4.png";
-import image5 from "../assets/images/image5.png";
-import image6 from "../assets/images/image6.png";
-import image7 from "../assets/images/image7.png";
+import image1 from "../assets/images/image1.webp";
+import image2 from "../assets/images/image2.webp";
+import image3 from "../assets/images/image3.webp";
+import image4 from "../assets/images/image4.webp";
+import image5 from "../assets/images/image5.webp";
+import image6 from "../assets/images/image6.webp";
+import image7 from "../assets/images/image7.webp";
 
 // Reusable Animated Image Component
 const AnimatedImage = ({ src, alt, initialClass, finalClass, isAnimated }) => {
