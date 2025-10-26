@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import logoVideo from "../assets/vedio/kaira_logo_ved.webm";
 import background from "../assets/images/Hero-background.webp";
 import ImageSlider from "./ImageSlider";
+import Form from "./Form";
 import DC from "../assets/images/DcConvertedSite.webp";
 
 import image1 from "../assets/images/image1.webp";
