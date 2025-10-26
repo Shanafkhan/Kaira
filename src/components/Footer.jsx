@@ -1,4 +1,4 @@
-import logo from "../assets/images/kaira-logo-light.png";
+import logo from "../assets/images/kaira-logo-light.webp";
 import { useState } from "react";
 import Form from "./Form";
 
