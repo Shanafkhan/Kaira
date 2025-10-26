@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-import coffeearabica from "../assets/images/coffee-arabica.png";
-import greveliaRobusta from "../assets/images/grevellia-robusta.png";
+import coffeearabica from "../assets/images/coffee-arabica.webp";
+import greveliaRobusta from "../assets/images/grevellia-robusta.webp";
 import woodBackground from "../assets/images/coffee-background.webp";
 import arrowleft from "../assets/images/arrow-left.webp";
 import arrowright from "../assets/images/arrow-right.webp";
-import nyctanthes from '../assets/images/nyctanthes.png';
-import cumini from '../assets/images/cumini.png';
-import marabica from '../assets/images/marabica.png';
-import mgrevelia from '../assets/images/mgrevelia.png';
-import mcumini from '../assets/images/mcumini.png';
-import mnyctanthes from '../assets/images/mnyctanthes.png';
+import nyctanthes from '../assets/images/nyctanthes.webp';
+import cumini from '../assets/images/cumini.webp';
+import marabica from '../assets/images/marabica.webp';
+import mgrevelia from '../assets/images/mgrevelia.webp';
+import mcumini from '../assets/images/mcumini.webp';
+import mnyctanthes from '../assets/images/mnyctanthes.webp';
 
 
 const slides = [

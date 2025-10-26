@@ -1,5 +1,5 @@
 import { useState } from "react";
-import image from "../assets/images/fromImage.png";
+import image from "../assets/images/fromImage.webp";
 import ModalBase from "./ModalBase";
 
 export default function Form({ isFormOpen, isFormClose }) {
@@ -46,10 +46,10 @@ export default function Form({ isFormOpen, isFormClose }) {
     setFormData({ name, email, phoneNumber, pageUrl });
 
     try {
-      // Only send the phone number to the OTP generation endpoint
+     
       const payload = { phoneNumber };
 
-      // Use the endpoint path for your FIRST handler
+      
       const res = await fetch("/api/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -123,8 +123,6 @@ export default function Form({ isFormOpen, isFormClose }) {
 
           {/* Right Form Section */}
           <div className='w-full md:w-1/2 bg-light p-6 sm:p-10 md:p-12 flex flex-col justify-center'>
-            
-            {/* 6. Use the central handleSubmit on the <form> tag */}
             <form className='w-full' onSubmit={handleSubmit}>
               {step === 1 && (
                 <div>
@@ -214,7 +212,7 @@ export default function Form({ isFormOpen, isFormClose }) {
             </form>
             {step === 3 && (
               <div className='text-center py-8'>
-                <h2 className='text-2xl font-medium text-green-600'>
+                <h2 className='text-xl font-medium font-primary text-green-300'>
                   {message}
                 </h2>
               </div>

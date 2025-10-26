@@ -9,16 +9,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
-import image1 from '../assets/images/polaroid/pimage1.png';
-import image2 from '../assets/images/polaroid/pimage2.png';
-import image3 from '../assets/images/polaroid/pimage3.png';
-import image4 from '../assets/images/polaroid/pimage4.png';
-import image5 from '../assets/images/polaroid/pimage5.png';
-import image6 from '../assets/images/polaroid/pimage6.png';
-import image7 from '../assets/images/polaroid/pimage7.png';
-import image8 from '../assets/images/polaroid/pimage8.png';
-import image9 from '../assets/images/polaroid/pimage9.png';
-import image10 from '../assets/images/polaroid/pimage10.png';
+import image1 from '../assets/images/polaroid/pimage1.webp';
+import image2 from '../assets/images/polaroid/pimage2.webp';
+import image3 from '../assets/images/polaroid/pimage3.webp';
+import image4 from '../assets/images/polaroid/pimage4.webp';
+import image5 from '../assets/images/polaroid/pimage5.webp';
+import image6 from '../assets/images/polaroid/pimage6.webp';
+import image7 from '../assets/images/polaroid/pimage7.webp';
+import image8 from '../assets/images/polaroid/pimage8.webp';
+import image9 from '../assets/images/polaroid/pimage9.webp';
+import image10 from '../assets/images/polaroid/pimage10.webp';
 
 // --- Your Image Data ---
 // IMPORTANT: Replace these with the paths to your actual Polaroid images

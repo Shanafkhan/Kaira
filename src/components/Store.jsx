@@ -1,5 +1,5 @@
 import { useState } from "react";
-import background from "../assets/images/storeBackground.png";
+import background from "../assets/images/storeBackground.webp";
 import Form from "./Form";
 
 export default function Store() {

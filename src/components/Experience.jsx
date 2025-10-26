@@ -1,6 +1,6 @@
 import { useState } from "react";
-import image from "../assets/images/kairaExperience.png";
-import bgimg from "../assets/images/experience-background.png";
+import image from "../assets/images/kairaExperience.webp";
+import bgimg from "../assets/images/experience-background.webp";
 import Form from "./Form";
 
 export default function Experience() {
@@ -45,12 +45,12 @@ export default function Experience() {
         <div className='w-full md:w-1/2 px-6 sm:px-8 md:px-10 lg:px-16'>
           {[
             {
-              title: "Tradition meets comfort",
-              subtitle: "Old-school charm, new-age ease.",
+              title: "Only ₹849 Per Sqft",
+              subtitle: "Affordable Luxury Living.",
             },
             {
-              title: "It feels like home",
-              subtitle: "Even if you’ve just arrived.",
+              title: "Villas @ ₹2.4Cr",
+              subtitle: "Your Luxury Home awaits.",
             },
             {
               title: "Nature does the heavy lifting",

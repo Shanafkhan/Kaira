@@ -1,4 +1,4 @@
-import kairaLogo from '../assets/images/kaira-logo-light.png';
+import kairaLogo from '../assets/images/kaira-logo-light.webp';
 
 export default function Logo() {
   return (

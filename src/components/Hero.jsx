@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { MapPin } from "lucide-react";
 import logoVideo from "../assets/vedio/kaira_logo_ved.webm";
 import background from "../assets/images/Hero-background.png";
 import ImageSlider from "./ImageSlider";
+import DC from "../assets/images/DcConvertedSite.webp";
 
 import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
@@ -32,21 +34,12 @@ const AnimatedImage = ({ src, alt, initialClass, finalClass, isAnimated }) => {
 };
 
 // Text Content
-const HERO_CONTENT = [
-  {
-    h2: "Imagine mornings that smell of coffee blossoms, afternoons that echo with laughter in courtyards, and nights where the stars still put on a show.",
-    h1: "Welcome to Kaira",
-  },
-  {
-    h2: "ಕಾಫಿ ಹೂವುಗಳ ವಾಸನೆ ಬೀರುವ ಬೆಳಿಗ್ಗೆಗಳನ್ನು, ಅಂಗಳದಲ್ಲಿ ನಗುವಿನೊಂದಿಗೆ ಪ್ರತಿಧ್ವನಿಸುವ ಮಧ್ಯಾಹ್ನಗಳನ್ನು ಮತ್ತು ನಕ್ಷತ್ರಗಳು ಇನ್ನೂ ಪ್ರದರ್ಶನ ನೀಡುವ ರಾತ್ರಿಗಳನ್ನು ಕಲ್ಪಿಸಿಕೊಳ್ಳಿ.",
-    h1: "ಕೈರಾಗೆ ಸ್ವಾಗತ",
-  },
-];
 
 export default function Hero() {
   const [isAnimated, setIsAnimated] = useState(false);
   const [phase, setPhase] = useState(0);
   const [isTextVisible, setIsTextVisible] = useState(true);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const images = [image1, image2, image3, image4, image5, image6, image7];
 
@@ -91,8 +84,6 @@ export default function Hero() {
   const final_BL = "bottom-[-200px] left-[40px] rotate-[35deg]";
   const final_BR = "bottom-[-200px] right-[40px] rotate-[-35deg]";
 
-  const currentContent = HERO_CONTENT[phase % HERO_CONTENT.length];
-
   const textTransitionClass = `
     transition-opacity duration-700 ease-in-out
     ${isTextVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
@@ -101,101 +92,140 @@ export default function Hero() {
   return (
     <>
       <div
-      className="relative hidden md:flex flex-col items-center text-center min-h-[600px] md:min-h-[120vh] overflow-hidden px-4 md:pt-25 sm:px-10 md:px-20"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Animated Images - 4 positions */}
-      <AnimatedImage
-        src={getCurrentImageSrc(0)}
-        alt="Top Left Image"
-        initialClass={initial_TL}
-        finalClass={final_TL}
-        isAnimated={isAnimated}
-      />
-      <AnimatedImage
-        src={getCurrentImageSrc(1)}
-        alt="Top Right Image"
-        initialClass={initial_TR}
-        finalClass={final_TR}
-        isAnimated={isAnimated}
-      />
-      <AnimatedImage
-        src={getCurrentImageSrc(2)}
-        alt="Bottom Left Image"
-        initialClass={initial_BL}
-        finalClass={final_BL}
-        isAnimated={isAnimated}
-      />
-      <AnimatedImage
-        src={getCurrentImageSrc(3)}
-        alt="Bottom Right Image"
-        initialClass={initial_BR}
-        finalClass={final_BR}
-        isAnimated={isAnimated}
-      />
+        className='relative hidden md:flex flex-col items-center text-center min-h-[600px] md:min-h-[120vh] overflow-hidden px-4 md:pt-25 sm:px-10 md:px-20'
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
+        {/* Animated Images - 4 positions */}
+        <AnimatedImage
+          src={getCurrentImageSrc(0)}
+          alt='Top Left Image'
+          initialClass={initial_TL}
+          finalClass={final_TL}
+          isAnimated={isAnimated}
+        />
+        <AnimatedImage
+          src={getCurrentImageSrc(1)}
+          alt='Top Right Image'
+          initialClass={initial_TR}
+          finalClass={final_TR}
+          isAnimated={isAnimated}
+        />
+        <AnimatedImage
+          src={getCurrentImageSrc(2)}
+          alt='Bottom Left Image'
+          initialClass={initial_BL}
+          finalClass={final_BL}
+          isAnimated={isAnimated}
+        />
+        <AnimatedImage
+          src={getCurrentImageSrc(3)}
+          alt='Bottom Right Image'
+          initialClass={initial_BR}
+          finalClass={final_BR}
+          isAnimated={isAnimated}
+        />
 
-      {/* Main content */}
-      <div className={`z-10 max-w-5xl ${textTransitionClass}`}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-[150px] sm:h-[200px] md:h-[300px] w-auto object-contain mx-auto"
-        >
-          <source src={logoVideo} type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-
-        <h2 className="font-primary text-base sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10">
-          {currentContent.h2}
-        </h2>
-
-        <h1 className="mt-4 sm:mt-6 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-brown font-primary font-medium tracking-tighter">
-          {currentContent.h1}
-        </h1>
-      </div>
-    </div>
-    <div style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }} className="md:hidden p-5 flex flex-col items-center">
+        {/* Main content */}
         <div className={`z-10 max-w-5xl ${textTransitionClass}`}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-[150px] sm:h-[200px] md:h-[300px] w-auto object-contain mx-auto"
-        >
-          <source src={logoVideo} type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-        <div>
-          <h2 className="font-primary text-base text-center sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10">
-          {currentContent.h2}
-        </h2>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='h-[150px] sm:h-[200px] md:h-[300px] w-auto object-contain mx-auto'>
+            <source src={logoVideo} type='video/webm' />
+            Your browser does not support the video tag.
+          </video>
+          <h1 className='mt-4 sm:mt-6 text-5xl sm:text-7xl md:text-8xl lg:text-7xl text-brown font-primary font-medium tracking-tighter'>
+            Experience the perfect blend of luxury and nature
+          </h1>
 
-        <h1 className="mt-4 sm:mt-6 text-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-brown font-primary font-medium tracking-tighter">
-          {currentContent.h1}
-        </h1>
+          <h2 className='font-primary text-base sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10'>
+            Up to 22% ROI Annually | Clear Titles | DC Converted Land
+          </h2>
+          <p className='flex text-center justify-center items-center gap-2 text-brown font-primary pt-5'>
+            <MapPin className='text-brown-light w-5 h-5' />
+            Janakere - Sakleshpur, Karnataka
+          </p>
+          <div className='pt-12'>
+            <button
+              className='font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
+              onClick={() => setIsFormOpen(true)}>
+              Express Your Interest Now
+            </button>
+          </div>
+          {isFormOpen && (
+            <Form
+              isFormOpen={isFormOpen}
+              isFormClose={() => setIsFormOpen(false)}
+            />
+          )}
+          <div className='absolute top-3/4'>
+            <img
+              src={DC}
+              alt='DC convereted site badge'
+              className='h-[150px] w-auto'
+            />
+          </div>
         </div>
-        
-        <div className="max-w-[400px] overflow-clip pt-10">
-          <ImageSlider/>
+      </div>
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className='md:hidden p-5 flex flex-col items-center'>
+        <div className={`z-10 max-w-5xl ${textTransitionClass}`}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='h-[150px] sm:h-[200px] md:h-[300px] w-auto object-contain mx-auto'>
+            <source src={logoVideo} type='video/webm' />
+            Your browser does not support the video tag.
+          </video>
+          <div>
+            <h1 className='mt-4 sm:mt-6 text-center text-2xl sm:text-7xl md:text-8xl lg:text-9xl text-brown font-primary font-medium tracking-tighter'>
+              Experience the perfect blend of luxury and nature
+            </h1>
+            <h2 className='font-primary text-base text-center sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10'>
+              Up to 22% ROI Annually | Clear Titles | DC Converted Land
+            </h2>
+            <p className='flex text-center justify-center items-center gap-2 text-brown font-primary pt-5'>
+              <MapPin className='text-brown-light w-5 h-5' />
+              Janakere - Sakleshpur, Karnataka
+            </p>
+            <div className='pt-12 flex justify-center'>
+              <button
+                className='font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
+                onClick={() => setIsFormOpen(true)}>
+                Express Your Interest Now
+              </button>
+            </div>
+            {isFormOpen && (
+              <Form
+                isFormOpen={isFormOpen}
+                isFormClose={() => setIsFormOpen(false)}
+              />
+            )}
+            <div className='flex justify-center items-center'>
+              <img
+                src={DC}
+                alt='DC convereted site badge'
+                className='h-[150px] w-auto'
+              />
+            </div>
+          </div>
+          <div className='max-w-[400px] overflow-clip pt-10'>
+            <ImageSlider />
+          </div>
         </div>
-        
-      </div> 
-
-
-    </div>
-
+      </div>
     </>
-    
   );
 }
