@@ -17,7 +17,7 @@ import WhyKaira from './components/WhyKaira';
 import WhatsAppButton from './components/whatsappbutton';
 import LayoutandConfig from './components/LayoutandConfig';
 import Awards from './components/awards';
-import Testimonials from './components/Testimonials';
+import Testimonials from './components/testimonials';
 function App() {
 
   return (
