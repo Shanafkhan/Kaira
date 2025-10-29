@@ -70,7 +70,7 @@ export default function WhyChooseKaira() {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - */}
         <div className='pt-12 flex justify-center'>
           <button
             className='font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
