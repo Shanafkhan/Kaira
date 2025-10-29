@@ -2,6 +2,7 @@ import { useState } from "react";
 import bgimg from "../assets/images/experience-background.webp";
 import coffeeplantaions from "../assets/images/coffee-plantations.webp";
 import Form from "./Form";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Welcome() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -46,10 +47,20 @@ export default function Welcome() {
           {/* CTA Button */}
           <div className='pt-10'>
             <button
-              className='font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
+              className='w-120  font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
               onClick={() => setIsFormOpen(true)}>
               Avail the Unbeatable Offer Now
             </button>
+            <a
+              href="https://wa.me/15551234567" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="justify-center  w-120 mt-10 flex  gap-2 font-secondary font-bold sm:text-xl md:text-2xl text-green-600 px-8 py-4 rounded-[55px] border-2 border-green-600 hover:bg-green-600 hover:text-white transition duration-300 cursor-pointer"
+            >
+              <FaWhatsapp className="text-2xl" />
+              Chat on WhatsApp
+            </a>
+
           </div>
 
           {/* Popup Form */}
@@ -66,7 +77,7 @@ export default function Welcome() {
           <img
             src={coffeeplantaions}
             alt='coffee-plantations'
-            className='w-full max-w-md sm:max-w-lg md:max-w-[90%] h-auto rounded-3xl'
+            className='w-full max-w-md sm:max-w-lg md:max-w-[90%] h-96 rounded-3xl'
           />
         </div>
       </div>

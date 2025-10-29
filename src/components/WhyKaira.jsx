@@ -2,6 +2,7 @@ import { useState } from "react";
 import bgimg from "../assets/images/experience-background.webp";
 import villa from "../assets/images/villa.webp";
 import Form from "./Form";
+import { BiSolidPhoneCall } from 'react-icons/bi';
 
 export default function WhyKaira() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -56,11 +57,19 @@ export default function WhyKaira() {
           {/* CTA Button */}
           <div className="pt-8">
             <button
-              className="font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer"
+              className="w-120 font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer"
               onClick={() => setIsFormOpen(true)}
             >
               Book Your Site Visit
             </button>
+            <a
+              href="tel:+918970019817"
+              className="w-120 mt-10 flex items-center justify-center gap-2 font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown-600 hover:bg-brown hover:text-white transition duration-300 cursor-pointer"
+            >
+              <BiSolidPhoneCall    className="text-2xl" />
+              Call Now - 089 7001 9817
+            </a>
+
           </div>
 
           {/* Popup Form */}

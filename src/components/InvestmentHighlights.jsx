@@ -50,10 +50,19 @@ export default function InvestmentHighlights() {
         backgroundPosition: "center",
       }}>
       <div className='px-4 sm:px-8 md:px-16'>
-        {/* Section Title */}
-        <h2 className='text-4xl sm:text-6xl md:text-7xl tracking-tighter text-center border-b-2 border-brown-light pb-6'>
-          Investment Highlights
-        </h2>
+
+        <h1
+          style={{
+            fontWeight: 700,
+            fontSize: '2.5rem',
+            color: '#1a1a1a',
+            textAlign: 'center',
+            marginBottom: '1.5rem',
+            letterSpacing: '0.5px',
+          }}
+        >
+          Why Choose Kaira
+        </h1>
 
         {/* Highlights Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10'>
@@ -74,7 +83,7 @@ export default function InvestmentHighlights() {
           <button
             className='font-secondary font-bold text-lg sm:text-xl md:text-2xl text-brown px-8 py-4 rounded-[55px] border-2 border-brown hover:bg-brown hover:text-[#F5EDD9] transition duration-300 cursor-pointer'
             onClick={() => setIsFormOpen(true)}>
-            Express Your Interest Now
+            Sieze This Opportunity
           </button>
         </div>
         {isFormOpen && (

@@ -12,8 +12,12 @@ import AmenitiesSection from "./components/AmenitiesSection";
 import KairaGallery from './components/KairaGallery';
 import WhoWeAreSlide from './components/WhoWeAreSlide';
 import Welcome from './components/Welcome';
-import InvestmentHighlights from './components/InvestmentHighlights';
+import WhyChooseKaira from './components/Whychoosekaira';
 import WhyKaira from './components/WhyKaira';
+import WhatsAppButton from './components/whatsappbutton';
+import LayoutandConfig from './components/LayoutandConfig';
+import Awards from './components/awards';
+import Testimonials from './components/Testimonials';
 function App() {
 
   return (
@@ -21,17 +25,21 @@ function App() {
       <Hero/>
       <Logo />
       <Welcome />
-      <InvestmentHighlights/>
+      <GetInTouch />
       <WhyKaira />
       <Experience/>
+      <LayoutandConfig/>
       <AmenitiesSection />
       <Coffee />
       <Store />
+      <WhyChooseKaira />
       <KairaGallery />
       <WhoWeAreSlide />
+      <Awards />
+      <Testimonials />
       <Envelope />
-      <GetInTouch />
       <Footer />
+      <WhatsAppButton/>
       
     </>
   )

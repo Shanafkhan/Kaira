@@ -4,7 +4,7 @@ import logoVideo from "../assets/vedio/kaira_logo_ved.webm";
 import background from "../assets/images/Hero-background.webp";
 import ImageSlider from "./ImageSlider";
 import Form from "./Form";
-import DC from "../assets/images/DcConvertedSite.webp";
+import DC from "../assets/images/Dc_Converted.png";
 
 import image1 from "../assets/images/image1.webp";
 import image2 from "../assets/images/image2.webp";
@@ -145,7 +145,7 @@ export default function Hero() {
           </h1>
 
           <h2 className='font-primary text-base sm:text-xl md:text-2xl lg:text-3xl text-brown mt-4 tracking-tighter px-4 sm:px-10'>
-            Up to 22% ROI Annually | Clear Titles | DC Converted Land
+            Up to 22% ROI Annually | Clear Titles | Coffee Estates | Luxury Villas
           </h2>
           <p className='flex text-center justify-center items-center gap-2 text-brown font-primary pt-5'>
             <MapPin className='text-brown-light w-5 h-5' />
@@ -164,13 +164,14 @@ export default function Hero() {
               isFormClose={() => setIsFormOpen(false)}
             />
           )}
-          <div className='absolute top-3/4'>
-            <img
-              src={DC}
-              alt='DC convereted site badge'
-              className='h-[150px] w-auto'
-            />
-          </div>
+                  <div className='absolute top-1/8 -z-10 rotate-[30deg] right-1/8'>
+          <img
+            src={DC}
+            alt='DC converted site badge'
+            className='h-[250px] w-auto opacity-60'
+          />
+        </div>
+
         </div>
       </div>
       <div
