@@ -14,10 +14,10 @@ import WhoWeAreSlide from './components/WhoWeAreSlide';
 import Welcome from './components/Welcome';
 import WhyChooseKaira from './components/Whychoosekaira';
 import WhyKaira from './components/WhyKaira';
-import WhatsAppButton from './components/whatsappbutton';
+import WhatsAppButton from './components/WhatsAppButton';
 import LayoutandConfig from './components/LayoutandConfig';
 import Awards from './components/awards';
-import Testimonials from './components/Testimonials';
+import Testimonials from './components/testimonials';
 function App() {
 
   return (
